@@ -31,15 +31,22 @@ int main(void)
 
 int compute_score(string word)
 {
+    //checked if the character is a letter
     int length = strlen(word);
     int sum = 0;
-    for (int i = 0; i<length ; i++){
-        if(word[i]>96){
-            int score = word[i] - 97;
-            sum= sum + POINTS[score];
-        }else if(word[i]>64){
-            int score = word[i] - 65;
-            sum= sum +POINTS[score];
+    for (int index = 0; word[index] != '\0'; index++) {
+        //checked if the character is a letter
+        if (isalpha(word[index])) {
+            //getting the numbers that are equal to the letters on ASCII table and by functions getting their array order to get the scores they are equal to
+            for (int i = 0; i<length ; i++){
+                if(word[i]>96){
+                    int score = word[i] - 97;
+                    sum= sum + POINTS[score];
+                }else if(word[i]>64){
+                    int score = word[i] - 65;
+                    sum= sum +POINTS[score];
+                }
+            }
         }
     }
     return sum;
