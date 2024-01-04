@@ -23,7 +23,7 @@ for i in range(1,numDigits,2):
         a = creditnum[i] % 10
         creditnum[i] //= 10
         b = creditnum[i] % 10
-        sum+=a+b
+        sum=sum+a+b
     else:
         sum+=creditnum[i]
 for i in range(0,numDigits,2):
